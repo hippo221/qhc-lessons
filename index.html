@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QHC 수업 자료실 · 동수영중학교</title>
+<meta name="description" content="동수영중학교 연구학교 QHC 수업모형과 교과별 교수학습과정안 18편">
+<style>
+:root{
+  --navy:#17213A; --ink:#17213A; --muted:#4A5470; --line:#D5DAE3; --soft:#EEF1F6; --bg:#F6F7FA; --card:#FFFFFF;
+  --q:#2F5BD3; --h:#C9780C; --h-ink:#A35F06; --c:#1C805A; --gold:#F2B544;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:var(--q)}
+img{max-width:100%;display:block}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+section{padding:44px 0 8px}
+h2{font-size:clamp(24px,5.5vw,32px);line-height:1.25;margin:0 0 6px;letter-spacing:-.01em}
+.lead{color:var(--muted);margin:0 0 22px}
+.kicker{font-size:14px;font-weight:800;color:var(--q);letter-spacing:.04em}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:34px 0 30px}
+.badge{display:inline-block;background:var(--gold);color:var(--navy);font-weight:900;font-size:13px;padding:3px 10px}
+.hero h1{font-size:clamp(34px,9vw,60px);line-height:1.12;margin:14px 0 10px;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero p{margin:0;color:#C8D1E6;font-weight:600}
+.nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.nav a{color:#fff;text-decoration:none;border:1.5px solid rgba(255,255,255,.35);padding:7px 14px;font-weight:700;font-size:15px}
+.nav a:hover{background:rgba(255,255,255,.12)}
+
+/* QHC */
+.pill{display:inline-block;background:var(--navy);color:#fff;font-weight:800;padding:6px 14px;margin:0 0 18px}
+.steps{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;background:var(--card);border:1px solid var(--line);padding:16px}
+.letter{width:64px;height:64px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:38px;font-weight:900}
+.step h3{margin:0 0 4px;font-size:20px}
+.step p{margin:2px 0;font-size:15.5px}
+.step .ai{color:var(--muted)}
+.axis{margin-top:12px;background:var(--soft);padding:12px 16px;font-size:15px}
+
+/* outcomes */
+.ba{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr);align-items:stretch}
+.ba .box{padding:18px}
+.ba .before{background:var(--soft);color:var(--muted)}
+.ba .after{background:var(--q);color:#fff}
+.ba .tag{display:inline-block;font-size:12.5px;font-weight:800;padding:2px 9px;margin-bottom:10px}
+.ba .before .tag{background:#8F97A6;color:#fff}
+.ba .after .tag{background:var(--gold);color:var(--navy)}
+.ba strong{display:block;font-size:clamp(19px,4.6vw,24px);line-height:1.3}
+.ba .arrow{display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900}
+.voices{display:grid;gap:16px;margin:26px 0 8px}
+.bubble{position:relative;padding:14px 18px;font-size:16px;max-width:620px}
+.bubble::after{content:"";position:absolute;bottom:-9px;width:18px;height:18px;transform:rotate(45deg);background:inherit}
+.bubble.l{background:#FFF1D6;justify-self:start}.bubble.l::after{left:28px}
+.bubble.r{background:#E3ECFF;justify-self:end}.bubble.r::after{right:28px}
+.note{color:var(--muted);font-size:14.5px;margin:6px 0 0}
+.people{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px 6px;margin-top:14px;max-width:420px}
+.person{display:flex;flex-direction:column;align-items:center;gap:3px}
+.person i{width:16px;height:16px;border-radius:50%;background:var(--navy)}
+.person b{width:30px;height:20px;border-radius:15px 15px 3px 3px;background:var(--navy)}
+
+/* guardrails */
+.rails{counter-reset:r;display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.rails li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;background:var(--card);border:1px solid var(--line);padding:12px 14px}
+.rails li::before{counter-increment:r;content:counter(r);width:40px;height:40px;background:var(--navy);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:20px}
+.rails b{display:block;font-size:17px}
+.rails span{color:var(--muted);font-size:14.5px}
+
+/* lessons */
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 18px}
+.filters button{font:inherit;font-weight:800;font-size:14.5px;border:2px solid var(--fc,var(--navy));background:#fff;color:var(--fc,var(--navy));padding:6px 12px;cursor:pointer;min-height:40px}
+.filters button[aria-pressed="true"]{background:var(--fc,var(--navy));color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:12px}
+.lesson{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.lesson .top{padding:14px 16px 12px;display:flex;flex-direction:column;gap:6px;flex:1}
+.chip{align-self:flex-start;color:#fff;font-weight:800;font-size:13px;padding:2px 10px}
+.lesson h3{margin:0;font-size:18px;line-height:1.35}
+.lesson .sub{margin:0;color:var(--muted);font-size:14px}
+.qhc{margin:6px 0 0;padding:0;list-style:none;font-size:14.5px}
+.qhc li b{display:inline-block;width:18px}
+.lesson img{width:100%;height:150px;object-fit:cover;border-top:1px solid var(--line)}
+.lesson .pair{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.lesson .pair img{border-top:0;height:180px}
+.cap{font-size:12.5px;color:var(--muted);padding:6px 16px 0}
+.lesson .act{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 16px;border-top:1px solid var(--line)}
+.lesson .act a{background:var(--navy);color:#fff;text-decoration:none;font-weight:800;padding:9px 14px;font-size:15px}
+.lesson .act span{color:var(--muted);font-size:13px}
+.hidden{display:none!important}
+
+footer{margin-top:50px;background:var(--navy);color:#C8D1E6;padding:28px 0 36px;font-size:14px}
+footer b{color:#fff;font-size:17px}
+@media (max-width:520px){
+  .ba{grid-template-columns:1fr}
+  .ba .arrow{transform:rotate(90deg);height:36px}
+  .people{grid-template-columns:repeat(7,minmax(0,1fr))}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">2026 부산교육한마당 · 연구학교관</span>
+    <h1>AI의 답,<br>믿어도 <em>될까?</em></h1>
+    <p>동수영중학교 연구학교 · QHC 수업모형 · 질문하는 학생, 함께 생각하는 AI</p>
+    <nav class="nav" aria-label="바로가기">
+      <a href="#model">수업모형</a><a href="#change">연구 성과</a><a href="#rails">가드레일</a><a href="#lessons">수업 자료 18편</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="model">
+  <div class="kicker">연구 모형</div>
+  <h2>QHC 수업모형</h2>
+  <p class="lead">질문을 먼저 만들고, AI의 답을 근거와 맞춰 보고, 자신의 판단을 담아 산출물을 만듭니다.</p>
+  <div class="pill">AI는 Q 앞에 오지 않는다</div>
+  <div class="steps">
+    <div class="step"><div class="letter" style="background:var(--q)">Q</div><div><h3 style="color:var(--q)">질문 생성</h3><p><b>학생</b> 궁금한 점을 탐구할 수 있는 질문으로 다듬는다</p><p class="ai"><b>AI</b> 쓰지 않거나, 학생의 질문을 되묻기만 한다</p></div></div>
+    <div class="step"><div class="letter" style="background:var(--h)">H</div><div><h3 style="color:var(--h-ink)">AI 활용 탐구 · 검토</h3><p><b>학생</b> AI의 답을 교과서·동료·교사의 기준과 비교해 받아들이거나 고치거나 버린다</p><p class="ai"><b>AI</b> 교사가 설계한 가드레일 안에서 자료·반론·피드백</p></div></div>
+    <div class="step"><div class="letter" style="background:var(--c)">C</div><div><h3 style="color:var(--c)">산출물 생산</h3><p><b>학생</b> 자신의 판단이 담긴 산출물을 만들고 나눈다</p><p class="ai"><b>AI</b> 이미지·코드 변환 같은 표현 보조로만</p></div></div>
+  </div>
+  <div class="axis"><b>교사의 AI 활용</b> 수업 전 준비 → 수업 중 조정 → 수업 후 피드백</div>
+</section>
+
+<section id="change">
+  <div class="kicker">연구 성과</div>
+  <h2>QHC 수업이 만든 변화</h2>
+  <p class="lead">12개 교과 21명의 교사가 한 해 동안 QHC 수업을 운영했습니다.</p>
+  <div class="ba">
+    <div class="box before"><span class="tag">예전 수업</span><strong>AI에게<br>답을 묻는다</strong></div>
+    <div class="arrow" aria-hidden="true">→</div>
+    <div class="box after"><span class="tag">QHC 수업</span><strong>AI의 답을<br>따져 본다</strong></div>
+  </div>
+  <div class="voices">
+    <div class="bubble l">“내가 그냥 재미로만 쓰던 지피티를 수업시간에 활용해서 저런 방법으로도 사용할 수 있구나 라는 생각이 들었다”</div>
+    <div class="bubble r">“한번씩 정확하지 않은 자료를 알려줘서 판단하기 좀 어렵다”</div>
+  </div>
+  <p class="note">학생 서술형 응답 · AI를 쓰는 새로운 방법과 AI의 한계를 함께 알아차렸어요</p>
+  <h3 style="margin:28px 0 0;font-size:19px">12개 교과, 21명의 교사가 함께</h3>
+  <div class="people" role="img" aria-label="교사 21명">
+    <div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div>
+    <div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div>
+    <div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div><div class="person"><i></i><b></b></div>
+  </div>
+</section>
+
+<section id="rails">
+  <div class="kicker">교사용</div>
+  <h2>AI 가드레일 7원칙</h2>
+  <p class="lead">학생용 AI가 '답'이 아니라 '생각'을 돕도록 교사가 프롬프트에 넣은 장치입니다.</p>
+  <ol class="rails">
+    <li><div><b>정답 제공 금지</b><span>“절대로 답을 주지 마라.” (국어)</span></div></li>
+    <li><div><b>한 번에 하나씩 되묻기</b><span>“반드시 한 번에 질문 하나만 제시하라.” (국어)</span></div></li>
+    <li><div><b>생각을 유도하는 응답</b><span>“바로 알려주지 말고 생각을 유도할 수 있는 답변을 내놓아 줘.” (한문)</span></div></li>
+    <li><div><b>의도적 오류 제시</b><span>신뢰성이 부족한 반박을 일부러 제시해 학생이 오류를 지적하게 함 (국어)</span></div></li>
+    <li><div><b>검증 도구 자동 삽입</b><span>모든 답변 끝에 “교과서와 비교하세요” (역사)</span></div></li>
+    <li><div><b>결과물 오류 경고</b><span>‘글자가 틀릴 수 있으니 확인하라’는 경고 문구 노출 (한문)</span></div></li>
+    <li><div><b>연령 및 안전 고려</b><span>15세 미만은 교사가 대신 입력, 교육용 계정 안에서 사용 (한문·사회)</span></div></li>
+  </ol>
+</section>
+
+<section id="lessons">
+  <div class="kicker">교수학습과정안</div>
+  <h2>11개 교과, 18개 수업</h2>
+  <p class="lead">교과를 골라 보세요. 각 수업의 과정안을 PDF로 볼 수 있습니다.</p>
+  <div class="filters" role="group" aria-label="교과 선택">
+    <button type="button" data-f="all" aria-pressed="true">전체 18</button>
+    <button type="button" data-f="국어" style="--fc:#C8364B" aria-pressed="false">국어 2</button>
+    <button type="button" data-f="영어" style="--fc:#2F5BD3" aria-pressed="false">영어 3</button>
+    <button type="button" data-f="사회" style="--fc:#D2691E" aria-pressed="false">사회 2</button>
+    <button type="button" data-f="역사" style="--fc:#7E4BC4" aria-pressed="false">역사 2</button>
+    <button type="button" data-f="과학" style="--fc:#0F8A8A" aria-pressed="false">과학 1</button>
+    <button type="button" data-f="한문" style="--fc:#A0710A" aria-pressed="false">한문 1</button>
+    <button type="button" data-f="체육" style="--fc:#1C805A" aria-pressed="false">체육 3</button>
+    <button type="button" data-f="정보" style="--fc:#4B48C8" aria-pressed="false">정보 1</button>
+    <button type="button" data-f="기술" style="--fc:#6E8B12" aria-pressed="false">기술 1</button>
+    <button type="button" data-f="음악" style="--fc:#B07A00" aria-pressed="false">음악 1</button>
+    <button type="button" data-f="진로" style="--fc:#B23C8F" aria-pressed="false">진로 1</button>
+  </div>
+
+  <div class="grid" id="grid">
+    <article class="lesson" data-s="국어"><div class="top"><span class="chip" style="background:#C8364B">국어</span><h3>AI로 점검한 시 고쳐 쓰기</h3><p class="sub">AI를 통해 창작한 시를 점검하고, 점검 결과를 비판적으로 수용하기</p><ul class="qhc"><li><b style="color:var(--q)">Q</b>내 시에 운율·비유·상징이 잘 드러났을까?</li><li><b style="color:var(--h)">H</b>AI의 제안 중 받아들일 것과 거절할 것 고르기</li><li><b style="color:var(--c)">C</b>고쳐 쓴 시를 패들렛에 올려 공유하기</li></ul></div><img src="img/b3_korean_padlet.jpg" alt="학생들이 고쳐 쓴 시를 올린 패들렛 화면" loading="lazy"><div class="act"><a href="pdf/03_korean_poem.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 9쪽 · 0.9MB</span></div></article>
+
+    <article class="lesson" data-s="국어"><div class="top"><span class="chip" style="background:#C8364B">국어</span><h3>AI 토론 도우미의 논거 반박하기</h3><p class="sub">논증의 신뢰성, 타당성, 공정성 판단하기</p></div><div class="act"><a href="pdf/04_korean_debate.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 18쪽 · 0.6MB</span></div></article>
+
+    <article class="lesson" data-s="영어"><div class="top"><span class="chip" style="background:#2F5BD3">영어</span><h3>나이팅게일의 데이터로 설득하는 포스터</h3><p class="sub">Nightingale’s Secret Briefing Project · 설득 포스터와 영어 슬로건</p><ul class="qhc"><li><b style="color:var(--q)">Q</b>나이팅게일의 데이터로 관료를 설득하려면?</li><li><b style="color:var(--h)">H</b>AI 이미지가 설득 의도에 맞는지 골라 다듬기</li><li><b style="color:var(--c)">C</b>비교급·수동태로 쓴 영어 슬로건 포스터</li></ul></div><img src="img/b3_english_slide.jpg" alt="나이팅게일 비밀 결사단 수업 자료 슬라이드" loading="lazy"><div class="act"><a href="pdf/13_english_nightingale.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 13쪽 · 1.5MB</span></div></article>
+
+    <article class="lesson" data-s="영어"><div class="top"><span class="chip" style="background:#2F5BD3">영어</span><h3>Meet the World</h3><p class="sub">세계의 독특한 규칙을 조사해 모둠 발표하기</p></div><div class="act"><a href="pdf/12_english_world.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 10쪽 · 0.6MB</span></div></article>
+
+    <article class="lesson" data-s="영어"><div class="top"><span class="chip" style="background:#2F5BD3">영어</span><h3>영어로 담아내는 우리 학교 이야기</h3><p class="sub">AI 튜터의 피드백으로 학교 이야기를 영어 글로 완성하기</p></div><div class="act"><a href="pdf/14_english_school.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 10쪽 · 0.6MB</span></div></article>
+
+    <article class="lesson" data-s="사회"><div class="top"><span class="chip" style="background:#D2691E">사회</span><h3>데이터와 질문으로 본 수영구 인구</h3><p class="sub">우리 지역의 인구 구조와 인구 문제를 탐색하고 탐구 질문 만들기</p></div><div class="act"><a href="pdf/20_social_population.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 9쪽 · 0.7MB</span></div></article>
+
+    <article class="lesson" data-s="사회"><div class="top"><span class="chip" style="background:#D2691E">사회</span><h3>K-문화 가이드북 만들기</h3><p class="sub">문화의 속성을 적용해 외국인 친구의 질문에 답하기</p></div><div class="act"><a href="pdf/15_social_kculture.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 13쪽 · 0.5MB</span></div></article>
+
+    <article class="lesson" data-s="역사"><div class="top"><span class="chip" style="background:#7E4BC4">역사</span><h3>묘청의 서경 천도 운동, AI와 함께 추리하라</h3><p class="sub">AI 역사 탐정 조수에게 묻고, 교과서로 검증하기</p><ul class="qhc"><li><b style="color:var(--q)">Q</b>AI 탐정 조수에게 모둠 질문 3개 이상 던지기</li><li><b style="color:var(--h)">H</b>AI 답변을 교과서와 대조해 오류·과장 표시</li><li><b style="color:var(--c)">C</b>AI의 틀린 부분을 밝힌 모둠 최종 판결문</li></ul></div><img src="img/b1_history_app.jpg" alt="AI 역사 탐정 조수 앱의 AI 심문실 화면" loading="lazy"><div class="act"><a href="pdf/17_history_myocheong.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 10쪽 · 1.0MB</span></div></article>
+
+    <article class="lesson" data-s="역사"><div class="top"><span class="chip" style="background:#7E4BC4">역사</span><h3>이슬람교, 너는 어떤 종교니?</h3><p class="sub">AI 역사 인물 인터뷰와 모둠 퍼즐</p><ul class="qhc"><li><b style="color:var(--q)">Q</b>4단계 질문으로 AI 역사 인물 인터뷰</li><li><b style="color:var(--h)">H</b>모둠원 인터뷰를 맞춰 보며 인물 퍼즐 완성</li><li><b style="color:var(--c)">C</b>달라진 생각을 소감문과 사후 설문으로 정리</li></ul></div><img src="img/b3_history_puzzle.jpg" alt="이슬람 세계 역사인물 퍼즐 보드 화면" loading="lazy"><div class="act"><a href="pdf/18_history_islam.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 11쪽 · 1.0MB</span></div></article>
+
+    <article class="lesson" data-s="과학"><div class="top"><span class="chip" style="background:#0F8A8A">과학</span><h3>지구의 내가 달에 간다면? 중력 포스터</h3><p class="sub">AI·디지털 포스터로 탐구하는 중력</p><ul class="qhc"><li><b style="color:var(--q)">Q</b>달에 가면 나의 질량과 무게는 어떻게 될까?</li><li><b style="color:var(--h)">H</b>AI 포스터의 질량·무게·단위를 직접 검증</li><li><b style="color:var(--c)">C</b>고친 포스터로 지구와 달의 중력 차이 설명</li></ul></div><div class="cap">교사 예시 결과물</div><div class="pair"><img src="img/b1_sci_earth.jpg" alt="지구에서의 나 AI 포스터 예시" loading="lazy"><img src="img/b1_sci_moon.jpg" alt="달에서의 나 AI 포스터 예시" loading="lazy"></div><div class="act"><a href="pdf/26_science_gravity.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 10쪽 · 1.2MB</span></div></article>
+
+    <article class="lesson" data-s="한문"><div class="top"><span class="chip" style="background:#A0710A">한문</span><h3>AI로 만드는 한자 명함</h3><p class="sub">이름 한자의 뜻을 확인하고 명구를 담은 명함 만들기</p><ul class="qhc"><li><b style="color:var(--q)">Q</b>내 이름 한자에는 어떤 뜻이 담겼을까?</li><li><b style="color:var(--h)">H</b>AI가 추천한 한자·성어가 맞는지 확인</li><li><b style="color:var(--c)">C</b>앞면 한자 이름, 뒷면 명구를 담은 명함</li></ul></div><div class="cap">교사 예시 결과물</div><img src="img/b1_hanmun_card.jpg" alt="AI로 만든 한자 이름 명함 예시" loading="lazy" style="border-top:0"><div class="act"><a href="pdf/05_hanmun_card.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 12쪽 · 2.4MB</span></div></article>
+
+    <article class="lesson" data-s="체육"><div class="top"><span class="chip" style="background:#1C805A">체육</span><h3>AI와 함께하는 스마트 건강체력교실</h3><p class="sub">AI 자세 인식 앱으로 운동 기록을 스스로 관리하기</p></div><div class="act"><a href="pdf/06_pe_fitness.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 16쪽 · 1.4MB</span></div></article>
+
+    <article class="lesson" data-s="체육"><div class="top"><span class="chip" style="background:#1C805A">체육</span><h3>AI로 디자인한 우리 반 엠블럼·유니폼</h3><p class="sub">체육대회 때 착용할 엠블럼과 유니폼을 협동해 제작하기</p></div><div class="act"><a href="pdf/07_pe_emblem.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 12쪽 · 1.2MB</span></div></article>
+
+    <article class="lesson" data-s="체육"><div class="top"><span class="chip" style="background:#1C805A">체육</span><h3>AI로 짜는 기초체력 훈련 프로그램</h3><p class="sub">AI 앱을 활용해 모둠별 기초체력 훈련 프로그램 설계하기</p></div><div class="act"><a href="pdf/09_pe_training.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 11쪽 · 1.0MB</span></div></article>
+
+    <article class="lesson" data-s="정보"><div class="top"><span class="chip" style="background:#4B48C8">정보</span><h3>파이썬 도형 계산 웹앱 만들기</h3><p class="sub">선택구조로 만든 코드를 AI로 웹앱으로 바꿔 보기</p></div><div class="act"><a href="pdf/23_info_python.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 11쪽 · 1.3MB</span></div></article>
+
+    <article class="lesson" data-s="기술"><div class="top"><span class="chip" style="background:#6E8B12">기술</span><h3>불편의 발견? 발명의 탄생!</h3><p class="sub">생활 속 불편을 찾아 AI 발명 코치와 아이디어 다듬기</p></div><div class="act"><a href="pdf/25_tech_invention.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 26쪽 · 2.8MB</span></div></article>
+
+    <article class="lesson" data-s="음악"><div class="top"><span class="chip" style="background:#B07A00">음악</span><h3>판소리 자진사랑가 익히기</h3><p class="sub">판소리 구성요소를 익혀 직접 참여하기</p></div><div class="act"><a href="pdf/11_music_pansori.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 9쪽 · 0.3MB</span></div></article>
+
+    <article class="lesson" data-s="진로"><div class="top"><span class="chip" style="background:#B23C8F">진로</span><h3>AI로 탐색하는 성격 유형과 직업</h3><p class="sub">AI의 답변을 비판적으로 검토하며 관심 직업 탐색하기</p></div><div class="act"><a href="pdf/21_career_mbti.pdf" target="_blank" rel="noopener">과정안 보기</a><span>PDF · 17쪽 · 0.5MB</span></div></article>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>동수영중학교</b><br>
+    연구학교 영역: 디지털 기반 학생 맞춤교육<br>
+    AI 디지털 기반 교육자료 등을 활용한 교수학습 혁신 및 학생 역량 심화 연구<br>
+    - Q.U.E.S.T. 수업모형 개발 및 적용을 중심으로 (운영 중 QHC 모형으로 정교화) -<br>
+    문의 051-752-0046
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btns=document.querySelectorAll('.filters button');
+  var cards=document.querySelectorAll('#grid .lesson');
+  function pick(f){
+    btns.forEach(function(b){b.setAttribute('aria-pressed', b.getAttribute('data-f')===f ? 'true':'false');});
+    cards.forEach(function(c){c.classList.toggle('hidden', !(f==='all' || c.getAttribute('data-s')===f));});
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){pick(b.getAttribute('data-f'));});});
+})();
+</script>
+</body>
+</html>
